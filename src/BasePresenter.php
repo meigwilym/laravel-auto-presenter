@@ -67,6 +67,16 @@ abstract class BasePresenter implements UrlRoutable
     }
 
     /**
+     * Play nicely with LaravelCollective/html
+     *
+     * @return mixed 
+     */
+    public function getFormValue($key)
+    {
+	return $this->wrappedObject->getFormValue($key);
+    }
+
+    /**
      * Magic method access initially tries for local fields, then defers to the
      * decorated object.
      *
